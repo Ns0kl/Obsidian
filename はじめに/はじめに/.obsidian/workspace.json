@@ -1,0 +1,255 @@
+{
+  "main": {
+    "id": "c4bdfabbbd7ad36c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef11e7cb746c36fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cf026d2e31a87ab3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "000_Inbox/【2026年版】Obsidianの使い方完全ガイド｜Markdown記法から実践ワークフローまで 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "【2026年版】Obsidianの使い方完全ガイド｜Markdown記法から実践ワークフローまで 1"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c3f536e3758b3833",
+    "type": "split",
+    "children": [
+      {
+        "id": "4edc9d7e6a7294df",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d996b7c99945f8e2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "ファイルエクスプローラ"
+            }
+          },
+          {
+            "id": "0c9b34d53408c4ce",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "検索"
+            }
+          },
+          {
+            "id": "564b91327265f6a0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "ブックマーク"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4a79e616e0faa3b9",
+    "type": "split",
+    "children": [
+      {
+        "id": "526f15e3c752bf3e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "13565572ee9bad9a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "002_Literature/Clippings/🌐：【Obsidian】2023 年でオススメのプラグイン 66 選.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "バックリンク"
+            }
+          },
+          {
+            "id": "01f127f593c8c385",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "002_Literature/Clippings/🌐：【Obsidian】2023 年でオススメのプラグイン 66 選.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "アウトゴーイングリンク"
+            }
+          },
+          {
+            "id": "9780edd53f26a7d9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "タグ"
+            }
+          },
+          {
+            "id": "d02e386af9018a33",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-ghost",
+              "title": "all-properties"
+            }
+          },
+          {
+            "id": "17e25e0f97e416b9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "002_Literature/Clippings/🌐：【Obsidian】2023 年でオススメのプラグイン 66 選.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "アウトライン"
+            }
+          },
+          {
+            "id": "9042a815e70e1f69",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "markdown-importer:Markdownインポーターを開く": false,
+      "switcher:クイックスイッチャーを開く": false,
+      "graph:グラフビューを開く": false,
+      "canvas:新規キャンバスを作成": false,
+      "daily-notes:今日のデイリーノートを開く": false,
+      "templates:テンプレートを挿入": false,
+      "command-palette:コマンドパレットを開く": false,
+      "bases:新規ベースを作成": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-memos:Thino": false,
+      "pomodoro-timer:Toggle timer panel": false,
+      "periodic-notes:Open today": false
+    }
+  },
+  "active": "cf026d2e31a87ab3",
+  "lastOpenFiles": [
+    "002_Literature/Book/📕：Obsidian_Zenn.md",
+    "002_Literature/Base/Repository.base",
+    "002_Literature/Base/AI.base",
+    "002_Literature/Base/📎 Clipings.base",
+    "002_Literature/Base/📕 Book.base",
+    "001_Permanent/001_Note/N：Obsidianのすゝめ.md",
+    "000_Inbox/【2026年版】Obsidianの使い方完全ガイド｜Markdown記法から実践ワークフローまで 1.md",
+    "ようこそ.md",
+    "README.md",
+    "Settings/MetadataMenu/note.md",
+    "Settings/MetadataMenu/adr.md",
+    "Settings/WebClipper/デフォルト-clipper.json",
+    "Settings/WebClipper/youtube-clipper.json",
+    "Settings/WebClipper/deepwiki-clipper.json",
+    "Settings/WebClipper/github-repository-clipper.json",
+    "Settings/WebClipper/chatgpt-clipper.json",
+    "Settings/MetadataMenu",
+    "Excalidraw/excaldraw.md",
+    "Clippings/今日からはじめる知識管理：頑張らないObsidian活用術.md",
+    "999_Template/snippet/MTG.md",
+    "999_Template/snippet/Error.md",
+    "999_Template/Tag.md",
+    "999_Template/DailyNote.md",
+    "999_Template/読書メモ.md",
+    "999_Template/Note.md",
+    "999_Template/memo.md",
+    "999_Template/Event.md",
+    "999_Template/bookMemo.md",
+    "999_Template/Base.md",
+    "999_Template/ADR.md",
+    "999_Tags/obsidian.md",
+    "999_attachment/000_Inbox/Obsidian Plugin：Templater Plugin/IMG-20250725015109651.png",
+    "999_attachment/000_Inbox/Obsidian Plugin：Templater Plugin/IMG-20250725015029478.png",
+    "999_attachment/000_Inbox/YAMLフロントマター/IMG-20250623183526505.png",
+    "999_attachment/000_Inbox/Obsidian plugin：DataView/IMG-20250725014933853.png",
+    "999_attachment/000_Inbox/Obsidian plugin：Auto Tag & Linker/IMG-20250724234753776.png",
+    "999_attachment/000_Inbox/Obsidian plugin：Auto Tag & Linker/IMG-20250724234602586.png",
+    "999_attachment/000_Inbox/Obsidian pllugin：Obsidian Web Clipper/IMG-20250725015202058.png",
+    "999_attachment/ウィキリンク/IMG-20250623182847069.png",
+    "999_attachment/Pasted image 20251225034158.png",
+    "999_attachment/Pasted image 20251225031818.png",
+    "200_Daily/2026-08-10(月).md",
+    "200_Daily/2025-12-25(木).md",
+    "100_Event/2025/20250725_頑張らないObsidian活用術.md",
+    "002_Literature/Repository/📁：SilentVoid13Templater A template plugin for obsidian.md"
+  ]
+}

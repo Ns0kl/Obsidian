@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  react-app:
+    container_name: react-container
+    build:
+      dockerfile: ./docker-infra/react/Dockerfile
+    volumes:
+      - ./docker-workspace/react:/code/react
+    ports:
+      - "3000:3000"
+    command: sh -c "cd reactapp && npm start"
+    tty: true # コンテナが勝手に終了しないため

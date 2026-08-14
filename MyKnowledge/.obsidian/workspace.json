@@ -1,0 +1,238 @@
+{
+  "main": {
+    "id": "c1a22e9cb930c1c3",
+    "type": "split",
+    "children": [
+      {
+        "id": "f1cbd74c17a2b35e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1c91f241143be1e5",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新規タブ"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2bdd111ad0ceabbd",
+    "type": "split",
+    "children": [
+      {
+        "id": "3c639e35f4d3b901",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3b0e7c8ab89a92ab",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "ファイルエクスプローラ"
+            }
+          },
+          {
+            "id": "32592d2f9b3ed958",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "検索"
+            }
+          },
+          {
+            "id": "3c09def19ba9363e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "ブックマーク"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "46a6caecb2ba485e",
+    "type": "split",
+    "children": [
+      {
+        "id": "1efcc31d19091dca",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6bc641f7cc4d8be5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Clippings/今日からはじめる知識管理：頑張らないObsidian活用術.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "バックリンク"
+            }
+          },
+          {
+            "id": "03ad17c29b4f1b10",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Clippings/今日からはじめる知識管理：頑張らないObsidian活用術.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "アウトゴーイングリンク"
+            }
+          },
+          {
+            "id": "e0d8e87066d0cb92",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "タグ"
+            }
+          },
+          {
+            "id": "fb8e6b3464a5f6ae",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "すべてのプロパティ"
+            }
+          },
+          {
+            "id": "3a137af5dcf6cb06",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Clippings/今日からはじめる知識管理：頑張らないObsidian活用術.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "アウトライン"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:クイックスイッチャーを開く": false,
+      "graph:グラフビューを開く": false,
+      "canvas:新規キャンバスを作成": false,
+      "daily-notes:今日のデイリーノートを開く": false,
+      "templates:テンプレートを挿入": false,
+      "command-palette:コマンドパレットを開く": false,
+      "bases:新規ベースを作成": false
+    }
+  },
+  "active": "3b0e7c8ab89a92ab",
+  "lastOpenFiles": [
+    "AI/001_Permanent/009_Programming/codex.md",
+    "AI/002_Literature/AI記事/【図解たっぷり】Codex（コーデックス）入門！〜 何ができる？ 無料でできる導入と基本操作も解説〜  SkillhubAI（スキルハブエーアイ）.md",
+    "AI/999_Template/学習ノートテンプレート.md",
+    "AI/001_Permanent/009_Programming/Vibe Cording.md",
+    "AI/002_Literature/AI記事/Vibe Coding（バイブ・コーディング）とは？AI時代の新しい開発スタイルを解説.md",
+    "AI/001_Permanent/009_Programming/Python.md",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/public/logo192.png",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/public/manifest.json",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/public/robots.txt",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/public/index.html",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/public/logo512.png",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/public/favicon.ico",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/src/index.css",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/src/index.js",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/src/App.css",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/src/App.js",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/public",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/src",
+    "AI/999_src/React-master/docker-workspace/react/reactapp/README.md",
+    "AI/999_src/React-master/README.md",
+    "AI/999_src/python_base-master/README.md",
+    "AI/999_src/multilingual-master/README.md",
+    "AI/002_Literature/src/python_base-master/README.md",
+    "AI/002_Literature/src/React-master/README.md",
+    "AI/002_Literature/src/React-master/docker-workspace/react/reactapp/README.md",
+    "AI/002_Literature/src/React-master/docker-workspace/react/reactapp/public/logo512.png",
+    "AI/002_Literature/src/React-master/docker-workspace/react/reactapp/public/logo192.png",
+    "AI/002_Literature/src/multilingual-master/README.md",
+    "AI/001_Permanent/009_Programming/Semantic Kernel.md",
+    "AI/001_Permanent/009_Programming/LangGraph.md",
+    "AI/001_Permanent/009_Programming/LangChain.md",
+    "AI/001_Permanent/009_Programming/FastAPI.md",
+    "AI/002_Literature/AI記事/Azure OpenAI 推論モデル - GPT-5 シリーズ、o3-mini、o1、o1-mini.md",
+    "AI/001_Permanent/008_AzureAI/Azure OpenAI.md",
+    "AI/002_Literature/AI記事/Azure OpenAI.md",
+    "AI/002_Literature/AI記事/初めてのAzure OpenAI Service！基本操作.md",
+    "AI/001_Permanent/008_AzureAI/Azure Functions.md",
+    "AI/002_Literature/AI記事/Azure Functionsの基本、特徴、いい点.md",
+    "AI/002_Literature/AI記事/Azure Functionsの概要.md",
+    "AI/002_Literature/AI記事/【完全ガイド】Microsoft Foundry で作るAIエージェント（2026年1月）.md",
+    "無題のファイル.canvas",
+    "はじめに/999_attachment/000_Inbox/Obsidian plugin：Auto Tag & Linker/IMG-20250724234753776.png",
+    "はじめに/999_attachment/000_Inbox/Obsidian plugin：Auto Tag & Linker/IMG-20250724234602586.png",
+    "はじめに/999_attachment/000_Inbox/Obsidian pllugin：Obsidian Web Clipper/IMG-20250725015202058.png",
+    "はじめに/999_attachment/000_Inbox/YAMLフロントマター/IMG-20250623183526505.png",
+    "はじめに/999_attachment/000_Inbox/Obsidian Plugin：Templater Plugin/IMG-20250725015109651.png",
+    "はじめに/999_attachment/000_Inbox/Obsidian Plugin：Templater Plugin/IMG-20250725015029478.png",
+    "無題のファイル 1.canvas"
+  ]
+}

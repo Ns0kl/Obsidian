@@ -1,0 +1,9 @@
+
+# アプリ実行
+    npm start
+# テストの実行
+    npm test
+# ビルド
+    npm run build
+# プロジェクトからビルドの依存関係を削除
+    npm run eject

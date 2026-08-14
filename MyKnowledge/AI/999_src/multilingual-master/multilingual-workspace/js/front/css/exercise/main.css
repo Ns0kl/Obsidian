@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    margin: 20px;
+}
+
+.contents {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+th, td {
+    padding: 0.5em 10px 0.5em;
+    border-top: 1px solid #666;
+}
+
+tr:last-child td {
+  border-bottom: 1px solid #666;  
+}
+
+td:last-child {
+    text-align: right;
+}

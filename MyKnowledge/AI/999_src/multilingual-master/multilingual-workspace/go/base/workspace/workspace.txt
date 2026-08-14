@@ -1,0 +1,28 @@
+
+Go 1.18 からワークスペース機能がサポートされた
+複数のパッケージをワークスペースにて管理できる
+
+# ワークスペースを作成する
+$ mkdir workspace
+$ cd workspace
+$ go work init
+
+# myappモジュールを作成する
+$ mkdir myapp
+$ cd myapp
+$ go mod init example.com/myapp
+# myapp.go を作成(後述)
+$ cd ..
+$ go work use ./myapp
+
+# mypkgモジュールを作成する
+$ mkdir mypkg
+$ cd mypkg
+$ go mod init example.com/mypkg
+# mypkg.go を作成(後述)
+$ cd ..
+$ go work use ./mypkg
+
+# 実行する
+$ go run example.com/myapp
+Hello world!

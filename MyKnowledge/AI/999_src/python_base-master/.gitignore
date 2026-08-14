@@ -1,0 +1,19 @@
+# created by virtualenv automatically
+
+# キャッシュファイル
+*.o
+*.pyc
+__pycache__/
+
+# ローカル環境関連(いつか修正しないと)
+*.env
+pyvenv.cfg
+
+# ディレクトリを無視
+Scripts/
+Lib/
+share/
+
+# 不要アプリ
+polls/
+image_gen/

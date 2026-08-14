@@ -1,0 +1,79 @@
+
+# docker-compose.ymlのバージョン
+version: '3' 
+# コンテナ
+services:
+  # java:
+  #   container_name: java-container
+  #   build: 
+  #     context: .
+  #     dockerfile: ./docker-infra/java/Dockerfile
+  #   volumes:
+  #    - ${JAVA_WORKSPACE_PATH}:/java/code
+  #   working_dir: /java/code
+  #   ports:
+  #    - 8000:8000
+  #   tty: true
+
+  python:
+    container_name: python-container
+    build: 
+      context: .
+      dockerfile: ./docker-infra/python/Dockerfile
+    command: python3 manage.py runserver 0.0.0.0:8001
+    volumes:
+     - ${PYTHON_WORKSPACE_PATH}:/python/code
+    working_dir: /python/code
+    ports:
+     - 8001:8001
+    tty: true
+
+  # cpp:
+  #   container_name: cpp-container
+  #   build: 
+  #     context: .
+  #     dockerfile: ./docker-infra/cpp/Dockerfile
+  #   volumes:
+  #    - ${CPP_WORKSPACE_PATH}:/cpp/code
+  #   working_dir: /cpp/code
+  #   ports:
+  #    - 8002:8002
+  #   tty: true
+  
+  # php:
+  #   container_name: php-container
+  #   build: 
+  #     context: .
+  #     dockerfile: ./docker-infra/php/Dockerfile
+  #   volumes:
+  #    - ${PHP_WORKSPACE_PATH}:/php/code
+  #   working_dir: /php/code
+  #   ports:
+  #    - 8003:8003
+  #   tty: true
+
+  # js:
+  #   container_name: js-container
+  #   build: 
+  #     context: .
+  #     dockerfile: ./docker-infra/js/Dockerfile
+  #   volumes:
+  #    - ${JS_WORKSPACE_PATH}:/js/code
+  #   working_dir: /js/code
+  #   ports:
+  #    - 8004:8004
+  #   tty: true
+  
+  # go:
+  #   container_name: go-container
+  #   build: 
+  #     context: .
+  #     dockerfile: ./docker-infra/go/Dockerfile
+  #   volumes:
+  #    - ${GO_WORKSPACE_PATH}:/go/code
+  #   working_dir: /go/code
+  #   ports:
+  #    - 8005:8005
+  #   tty: true
+  
+

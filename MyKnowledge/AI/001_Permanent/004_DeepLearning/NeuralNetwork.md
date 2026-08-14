@@ -1,0 +1,508 @@
+# NeuralNetwork
+
+## 概要
+**[ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク")**とは、ニューラル (神経) の[ネットワーク](https://hogetech.info/network/osi/layer2#network "ネットワーク") (つながり) のことです。
+
+
+## なぜ重要か
+
+## 重要ポイント
+
+## ニューラルネットワークとは
+
+[多層パーセプトロン](https://hogetech.info/machine-learning/deep-learning/dl-basic2#mlp "多層パーセプトロン") は人工 [ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") の１種です。
+
+> [多層パーセプトロン](https://hogetech.info/machine-learning/deep-learning/dl-basic2#mlp "多層パーセプトロン") は時折、特に単一の隠れ層を持つ時、「 [バニラ](https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%8B%E3%83%A9_\(%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2\)) 」 [ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") と口語的に呼ばれることがある
+> 
+> https://ja.wikipedia.org/wiki/%E5%A4%9A%E5%B1%A4%E3%83%91%E3%83%BC%E3%82%BB%E3%83%97%E3%83%88%E3%83%AD%E3%83%B3
+
+なぜなら、パーセプトロン = 「人工ニューロン (脳の神経細胞) 」を多層に「繋げた」ものだからです。
+
+![](https://hogetech.info/wp-content/uploads/2022/03/7bbefb8f231d232d8ec6a01c33469eec-1.png)
+
+バイアス B が存在する場合もあります
+
+### 機械学習とニューラル ネットワークの違い
+
+[ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") は [データ](#) の特徴量 (「数字の判定は形」、「T シャツのサイズは身丈」など) を機械が見つけます。
+
+機械学習、人工知能
+
+|  | 従来の **機械学習** | **[ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク")** |
+| --- | --- | --- |
+| 特徴量 | 人が特徴を見つける   (SIFT, SURF, HOG) | 機械が特徴を見つける   ([ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク")) |
+| 識別器 | 機械が特徴から規則性を見つける   (SVM, [KNN](https://hogetech.info/ml/algorithm/knn "【入門】k-NN (k近傍法) とは？わかりやすく解説")) | 機械が特徴から規則性を見つける |
+
+つまり、大量のデータさえ用意すれば、人が介入することなくパターンを学習できます。(数字であろうと、T シャツのサイズであろうと関係なく学習可能)
+
+### 推論可能な問題の種類
+
+[ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") は以下の２つの問題を推論できます。
+
+- [回帰問題](#regression)
+- [分類問題](#classification)
+
+例えば、写真に映る人 (データ) を、身長「何センチ」か推測する問題です。
+
+[ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") の [出力層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#output_layer "出力層") が出力する値は Y = f(X) の Y となります。(入力は X)
+
+![](https://hogetech.info/wp-content/uploads/2022/02/reg.png)
+
+入力した Input に対する出力 Y = f(X) を返す
+
+例えば、写真に映る人 (データ) を、服のサイズ「S」・「M」・「L」の３クラスに分類する問題です。
+
+辞書、百科事典
+
+[出力層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#output_layer "出力層") のニューロンの数はクラス (グループ) の数、出力値は各クラスに該当する確率等になります。
+
+![](https://hogetech.info/wp-content/uploads/2022/02/class-1.png)
+
+入力した値の座標が、どのクラス (色) に属するか
+
+### ニューラルネットワークの流れ
+
+[ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") は主に２つのフェーズに分かれます。
+
+1. [学習フェーズ](#training) ：「重み W」と「バイアス B」を設定 (学習済みモデルを作成)
+2. [推論フェーズ](#inference) ：学習済みモデルを使って「入力 X」 から「出力 Y」を求める
+![](https://hogetech.info/wp-content/uploads/2022/03/7bbefb8f231d232d8ec6a01c33469eec-3.png)
+
+バイアス B が存在する場合もあります
+
+## ニューラルネットワークの推論
+
+[ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") では、以下の手順で推論を行います (入力 X から出力 Y を求めます) 。
+
+機械学習、人工知能
+
+**※各用語は後述します。**
+
+![](https://hogetech.info/wp-content/uploads/2022/03/b992e3e93fc582dfe739dc9235fa101c.png)
+
+※重み W とバイアス B の設定 (学習フェーズ) が終わっている前提
+
+1. 各総和 a ([全結合層 A](#sum)) を求めます※
+2. 各総和 a [(](#sum)[全結合層 A](#sum)) に対して [活性化関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#activation_function "活性化関数") を適用します
+3. [中間層 (隠れ層)](#hidden_layer) の場合は、中間 Z を次の入力として手順１に戻ります。  
+	[出力層](#output_layer) の場合は終了します
+
+※「 [中間層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#hidden_layer "中間層") 」と「 [出力層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#output_layer "出力層") 」は、以下のように「 [全結合層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#sum "全結合層") 」と「 [活性化関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#activation_function "活性化関数") 」から構成されます。
+
+![](https://hogetech.info/wp-content/uploads/2022/03/7d90b81ae27a13938e211e1ed1f9a2dc-4.png)
+
+バイアスを省略。上の図と同じ
+
+![](https://hogetech.info/wp-content/uploads/2022/03/7d90b81ae27a13938e211e1ed1f9a2dc-2.png)
+
+( 中間層 or 出力層 ) = 全結合層 + 活性化関数 と考えると良い
+
+[全結合層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#sum "全結合層") の数式は以下のとおりです。([パーセプトロンの数式](#activation_function) から [活性化関数](#activation_function) を除いたもの)
+
+$$
+{A_1 = \left\{\begin{array}{ll} a_{11} = (b_1+w ^{1}_{11}x_1+w ^{1}_{12}x_1) \\ a_{12} = (b_1+w ^{1}_{21}x_2+w ^{1}_{22}x_2) \\ \end{array} \right. }
+$$
+
+これは以下のように行列で表現でき、Python で簡単に計算できます。
+
+$$
+A = \begin{pmatrix} a_1 & a_2 \end{pmatrix}, B = \begin{pmatrix} b_1 & b_2 \end{pmatrix},  X = \begin{pmatrix} x_1 & x_2 \end{pmatrix}, W = \begin{pmatrix} w ^{1}_{11} & w ^{1}_{21} \\ w ^{1}_{12} & w ^{1}_{22} \\ \end{pmatrix}
+$$
+
+$$
+A_1 = B + X * W
+$$
+
+#### Python での実装例
+
+```makefile
+import numpy as np
+
+B = np.array([0,1])
+X = np.array([2,3])
+W = np.array([[4,5],[6,7]])
+
+A1 = B + np.dot(X, W)
+print(A1)
+```
+
+\[26 32\]
+
+### 中間層 (隠れ層) の活性化関数
+
+![](https://hogetech.info/wp-content/uploads/2022/02/180f7c81f390ed5436611bf6b95e482c-3.png)
+
+[中間層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#hidden_layer "中間層") では、 [全結合層](https://hogetech.info/wp-admin/post.php?post=6589&action=edit#sum) に次のいずれかの [活性化関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#activation_function "活性化関数") ([非線形関数](#non-linearity)) を利用します。
+
+- [シグモイド関数](#sigmoid)
+- [ReLU (Rectified Linear Unit) 関数](#relu)
+
+基本的に [ReLU](https://hogetech.info/machine-learning/deep-learning/dl-basic2#relu "ReLU") 関数を使っておけば良さそうです。(参考資料 [１](https://qiita.com/miyamotok0105/items/3435930cc04650bce54d) 、 [２](https://arakan-pgm-ai.hatenablog.com/entry/2018/11/07/090000))
+
+[シグモイド関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#sigmoid "シグモイド") の数式は以下のとおりです。
+
+$$
+h(x) = \frac{1}{1 + exp(-x)}
+$$
+
+[シグモイド関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#sigmoid "シグモイド") をグラフで表現すると以下のとおりです。
+
+![](https://hogetech.info/wp-content/uploads/2022/02/Figure_2.png)
+
+https://github.com/oreilly-japan/deep-learning-from-scratch
+
+```python
+import numpy as np
+import matplotlib.pylab as plt
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))    
+
+X = np.arange(-5.0, 5.0, 0.1)
+Y = sigmoid(X)
+plt.plot(X, Y)
+plt.ylim(-0.1, 1.1)
+plt.show()
+```
+
+[ReLU 関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#relu "ReLU") ([ランプ関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#relu "ReLU")) の数式は以下のとおりです。
+
+$$
+{h(x) = \left\{\begin{array}{ll} x & (x \gt) \\ 0 & (0 \leq) \\ \end{array} \right. }
+$$
+
+[ReLU 関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#relu "ReLU") ([ランプ関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#relu "ReLU")) をグラフで表現すると以下のとおりです。
+
+![](https://hogetech.info/wp-content/uploads/2022/02/Figure_1.png)
+
+https://github.com/oreilly-japan/deep-learning-from-scratch
+
+```python
+# coding: utf-8
+import numpy as np
+import matplotlib.pylab as plt
+
+def relu(x):
+    return np.maximum(0, x)
+
+x = np.arange(-5.0, 5.0, 0.1)
+y = relu(x)
+plt.plot(x, y)
+plt.ylim(-1.0, 5.5)
+plt.show()
+```
+
+### 出力層の活性化関数の使い方
+
+[出力層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#output_layer "出力層") では、 [全結合層](http://＃sum) に適用する [活性化関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#activation_function "活性化関数") を、推論したい問題によって次のように選択します。
+
+| 推論したい問題 | **利用する** [活性化関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#activation_function "活性化関数") |
+| --- | --- |
+| [回帰問題](#regression) | [恒等関数](#identity) |
+| [分類問題](#classification) | [ソフトマックス関数](#softmax) |
+
+[恒等関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#identity "恒等関数") を表現する式は以下のとおりです。(つまり何もしなくていいです。)
+
+$$
+a = f(a)
+$$
+
+![](https://hogetech.info/wp-content/uploads/2022/02/b992e3e93fc582dfe739dc9235fa101c-1.png)
+
+[ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") が予測した身長は a12 の値となります。
+
+[ソフトマックス関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#softmax "softmax") を表現する式は以下のとおりです。
+
+$$
+y_k = \frac{exp(a_k)}{\sum_{i=1}^{n} exp(a_i)}
+$$
+
+![](https://hogetech.info/wp-content/uploads/2022/02/7d90b81ae27a13938e211e1ed1f9a2dc.png)
+
+例えば、 [出力層](https://hogetech.info/machine-learning/deep-learning/dl-basic2#output_layer "出力層") の A2 (a21, a22, a23) = \[0.5, 1.5, 2.5\] に、 [ソフトマックス関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#softmax "softmax") を利用してみます。
+
+```
+import numpy as np
+          
+def softmax(a):
+    c = np.max(a)
+    exp_a = np.exp(a - c) #オーバーフロー対策
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+          
+    return y
+          
+a = np.array([0.5, 1.5, 2.5])
+y = softmax(a)
+print(y)
+```
+
+```json
+[0.09003057 0.24472847 0.66524096]
+```
+
+それぞれ「S サイズは 9.0%」・「M サイズは 24.4%」・「L サイズは 66.5%」
+
+よってこの [ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") は、入力したシャツのサイズは、確率の一番高い L サイズだと判定します。
+
+> [ソフトマックス関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#softmax "softmax") の前後で値の大小関係は変わりません。
+> 
+> ・ [ソフトマックス関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#softmax "softmax") 前：\[0.5 < 1.5 < 2.5\]  
+> ・ [ソフトマックス関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#softmax "softmax") 後：\[0.09003057 < 0.24472847 < 0.66524096\]
+> 
+> つまり、単に [分類問題](https://hogetech.info/ml/dl/type#supervised "教師あり") を分類する場合、 [ソフトマックス関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#softmax "softmax") は必要ありません。(一番値の大きいものを選べばいい)
+> 
+> [ソフトマックス関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#softmax "softmax") は、「 [分類問題](https://hogetech.info/ml/dl/type#supervised "教師あり") の出力を確率で取得したい場合」や「 [ニューラルネットワークの学習](https://hogetech.info/machine-learning/deep-learning/dl-basic2#training "ニューラルネットワークの学習") 」に利用します。
+
+### 推論のまとめ
+
+これまでの内容をまとめると、 [ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") で推論は以下の手順となります。
+
+![](https://hogetech.info/wp-content/uploads/2022/03/8da89575c9b3441c9971d7a8cbab1c3e-2.png)
+
+中間層 に ReLU 、 出力層 Softmax を使った場合
+
+## ニューラルネットワークの学習
+
+例えば、以下の 28 \* 28 ピクセルの画像では、入力 X は 784 個となります。
+
+![](https://hogetech.info/wp-content/uploads/2022/02/mnist_1layer-2.png)
+
+https://m [l4](https://hogetech.info/network/osi/layer4 "トランスポート層") a.github.io/m [l4](https://hogetech.info/network/osi/layer4 "トランスポート層") a/jp/looking\_inside\_neural\_nets/
+
+この 784 個の入力 X に対して、以下のようにニューロンの数だけ重み W を設定する必要があります。
+
+![](https://hogetech.info/wp-content/uploads/2022/02/weights_analogy_1-1.png)
+
+https://m [l4](https://hogetech.info/network/osi/layer4 "トランスポート層") a.github.io/m [l4](https://hogetech.info/network/osi/layer4 "トランスポート層") a/jp/looking\_inside\_neural\_nets/
+
+しかし、この膨大な数の重み W (とバイアス B) の値を、手作業で設定するのは現実的ではありません。
+
+そこで、 [ニューラルネットワークの学習](https://hogetech.info/machine-learning/deep-learning/dl-basic2#training "ニューラルネットワークの学習") (大量の学習用の画像データ\[= 訓練データ\] を見せること) により、自動で適切な重み W を設定します。
+
+以降では、 [ニューラルネットワークの学習](https://hogetech.info/machine-learning/deep-learning/dl-basic2#training "ニューラルネットワークの学習") で利用する最適化アルゴリズムの１つである「 [確率的勾配法 (SGD)](https://hogetech.info/machine-learning/deep-learning/dl-basic2#sgd "SGD") 」を用いて、自動で適切な重み W を設定する方法を説明します。
+
+その他の最適化アルゴリズムについては、以下の記事をご覧ください。
+
+![](https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhogetech.info%2Fmachine_learning%2Fdeep_learning%2Fdl_basic4%23alg?w=160&h=90)
+
+※各用語については後述します。
+
+1. 学習用の大量の [データ](#) (訓練データ) から一部のデータを選ぶ \[[ミニバッチ学習](#minibatch)\]
+2. 重み W が適切かどうか判断する指標が、良くなる方向を算出 \[[損失関数](#loss) の [勾配](#grad) を算出\]
+3. 重み W を指標がよくなる方向に、 [学習率](#learning_rate) (任意の定数) の分だけ更新 \[[勾配降下法](#grad)\]
+4. １に戻る
+
+つまり、標本調査です。
+
+> 統計調査によって何かを調べたい時、例えばある中学校で全校生徒の平均身長を調べたいと思ったら、生徒全員の身長を測って平均を計算すれば正確な結果が得られます。このように、対象となるすべてを調べる調査を「全数調査」といいます。一つの中学校の全生徒の身長を調べることは、それほど大変な手間ではないでしょうが、日本中のすべての中学生の身長を調べるのは大変な手間と費用がかかります。このような場合には、手間や費用を省くために、一部の人だけを選んで調べる方法もあります。このような調査を [**「標本調査」**](https://www.stat.go.jp/teacher/survey.html#survey) といいます。
+> 
+> https://www.stat.go.jp/teacher/survey.html
+
+[ミニバッチ学習](https://hogetech.info/machine-learning/deep-learning/dl-basic2#minibatch "ミニバッチ") (全部の訓練データを使わず、一部のデータのみ) を使う理由としては、後述する [損失関数](https://hogetech.info/wp-admin/post.php?post=6589&action=edit#loss) の計算量が多すぎるからです。
+
+[ニューラルネットワークの学習](#training) (適切な重み W の自動設定) とは、 [損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") を０に近づける(=予測の正解数を増やす) W の値を探すことです。
+
+よく利用する [損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") は以下の２つです。
+
+| [損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") | 利用用途 |
+| --- | --- |
+| [二乗和誤差](#mean) | [回帰問題](#regression) |
+| [交差エントロピー誤差](#cross_entropy) | [分類問題](#classification) |
+
+２乗和誤差を数式で表すと以下のとおりです。(y は予測、t は正解)
+
+$$
+E = \frac{1}{2}\sum_{k} (y_k-t_k)^2
+$$
+
+なお、以下の計算は２乗和誤差をより使いやすくするためのものであり、数式の意味に影響は与えません。
+
+- 合計を２乗するのは、正の数にしたいからです。
+- 合計を 1/2 するのは、後述する微分で指数２と打ち消し合う計算の都合です。
+
+２乗和誤差の実装例は以下のとおりです。（0 ~ 9 まで 10 種類の文字を分類する [ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク") ）
+
+vim mean\_squared\_error.py
+
+```yaml
+import numpy as np
+
+def mean_squared_error(y, t):
+  return 0.5 * np.sum((y-t)**2)
+
+t = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0] # 数字の「2」が正解
+
+#正しい予測：数字の「２」である確率は 0.6 = 60%の場合
+y = [0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0]
+result = mean_squared_error(np.array(y), np.array(t))
+print("正しい予測の場合:%f" % result)
+
+#誤った予測：数字の「６」である確率が80%の場合
+wrong_y = [0.1, 0.05, 0.0, 0.0, 0.05, 0.0, 0.8, 0.0, 0.0, 0.0]
+result = mean_squared_error(np.array(wrong_y), np.array(t))
+print("誤った予測の場合:%f" % result)
+```
+
+python3 mean\_squared\_error.py
+
+```
+正しい予測の場合:0.097500
+誤った予測の場合:0.827500
+```
+
+正しい予測のほうが、 [損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") が小さいことがわかります。
+
+交差エントロピー誤差を数式で表すと以下のとおりです。(y は予測、t は正解なら１、不正解なら０)
+
+$$
+E = -\sum_{k} t_k \log y_k
+$$
+
+交差エントロピー誤差の実装例は以下のとおりです。  
+（0 ~ 9 まで 10 種類の文字を分類する [ニューラルネットワーク](https://hogetech.info/machine-learning/deep-learning/dl-basic2#neural_network "ニューラルネットワーク"))
+
+vim cross\_entropy\_error.py
+
+```yaml
+import numpy as np
+
+def cross_entropy_error(y, t):
+  delta = 1e-7
+  return -np.sum(t * np.log(y + delta))
+
+t = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0] # 数字の「2」が正解
+
+#正しい予測：数字の「２」である確率は 0.6 = 60%の場合
+y = [0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0]
+result = cross_entropy_error(np.array(y), np.array(t))
+print("正しい予測の場合:%f" % result)
+
+#誤った予測：数字の「６」である確率が80%の場合
+wrong_y = [0.1, 0.05, 0.0, 0.0, 0.05, 0.0, 0.8, 0.0, 0.0, 0.0]
+result = cross_entropy_error(np.array(wrong_y), np.array(t))
+print("誤った予測の場合:%f" % result)
+```
+
+python3 cross\_entropy\_error.py
+
+```
+正しい予測の場合:0.510825
+誤った予測の場合:16.118096
+```
+
+正しい予測のほうが、 [損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") が小さいことがわかります。
+
+#### 損失関数を利用する理由
+
+**[損失関数](#loss) ではなく、予測正解率じゃ駄目なのか？** と疑問に思った方がいるかもしれません。
+
+[損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") を利用する利点は、予測の大小を表現できることです。
+
+例えば、以下の [分類問題](#classification) で「予測 = ☆の座標(の領域)」「正解は黄色の領域」だったとします。
+
+この時、次の２つ次のどちらの予測が良い予測といえるでしょうか。
+
+![](https://hogetech.info/wp-content/uploads/2022/02/ce31eecf70c3c49bc53d6507b000f851.png)
+
+予測の「☆」が正解の「黄色領域」から遠い
+
+![](https://hogetech.info/wp-content/uploads/2022/02/377f490336fba3949e301c4c9384f641.png)
+
+予測の「☆」が正解の「黄色領域」に近い
+
+どちらも予測自体は間違いですが、右の予測の方が正解の黄色領域に近いため良い予測と言えます。
+
+そのため、予測正解率ではなく、 [損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") を利用します。
+
+では、ここからは [損失関数](#loss) を減らす方法として、 [勾配降下法](https://hogetech.info/machine-learning/deep-learning/dl-basic2#grad "勾配") を紹介します。
+
+例えば、重み W (w0, w1) からなる、以下の関数を考えます。
+
+$$
+f(w_0 , w_1) = {w_{0}}^{2} + {w_{1}}^{2}
+$$
+
+上記の関数に対する [勾配](https://hogetech.info/machine-learning/deep-learning/dl-basic2#grad "勾配") grad f と、 [勾配](https://hogetech.info/machine-learning/deep-learning/dl-basic2#grad "勾配") のマイナス方向 -grad f は以下のとおりです。
+
+$$
+grad f = (2w_0, 2w_1)
+$$
+
+$$
+-grad f = (-2w_0, -2w_1)
+$$
+
+上記の関数 f(w\_0, w\_1) と、-grad f をグラフで表すと以下のとおりです。
+
+![](https://hogetech.info/wp-content/uploads/2022/03/0e1918b9239c187f68988a78ecf1fb19.png)
+
+関数 f(w0, w1) = w0^2 + w1^2 のグラフ
+
+![](https://hogetech.info/wp-content/uploads/2022/03/62261218918aa80ab8f7bc7d006b2756.png)
+
+マイナス方向の 勾配 - grad f = (-2w\_0, -2w\_1) ソースコード https://github.com/oreilly-japan/deep-learning-from-scratch/blob/master/ch04/gradient\_2d.py
+
+上のグラフから次の２つのことが読み取れます。
+
+- 関数 f(w0, w1) は、(w0, w1) = (0, 0) の時、最も小さくなる
+- マイナス方向の [勾配](https://hogetech.info/machine-learning/deep-learning/dl-basic2#grad "勾配") -grad f は、(w0, w1) = (0, 0) の方向を示す
+
+つまり、 [勾配](https://hogetech.info/machine-learning/deep-learning/dl-basic2#grad "勾配") のマイナス方向に進むことで [損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") を減らせることがわかります。
+
+以下のように重み W を、 [勾配](https://hogetech.info/machine-learning/deep-learning/dl-basic2#grad "勾配") (∂L/∂W) のマイナス方向に移動すると、 [損失関数](https://hogetech.info/machine-learning/deep-learning/dl-basic2#loss "損失関数") が減少することがわかります。
+
+$$
+W ← W - \frac{∂L}{∂W}
+$$
+
+![](https://hogetech.info/wp-content/uploads/2022/03/gravity-1.gif)
+
+勾配 のマイナス方向を表す図
+
+![](https://hogetech.info/wp-content/uploads/2022/03/matplot003-39.gif)
+
+勾配 のマイナス方向に進むと、 損失関数 f(w) が減少する
+
+数式で表すと以下のとおりです。(W は重み、← は代入、ηは [学習率](https://hogetech.info/machine-learning/deep-learning/dl-basic2#learning_rate "学習率") 、∂L/∂W は [勾配](https://hogetech.info/machine-learning/deep-learning/dl-basic2#grad "勾配"))
+
+$$
+W ← W - \eta \frac{∂L}{∂W}
+$$
+
+[学習率](https://hogetech.info/machine-learning/deep-learning/dl-basic2#learning_rate "学習率") は大きすぎても、小さすぎても駄目です。{(w0, w1) = (0, 0) に近づきません}
+
+![](https://hogetech.info/wp-content/uploads/2022/03/large.gif)
+
+学習率 が大きすぎる時 = 損失関数 の最小地点を通り過ぎて発散
+
+![](https://hogetech.info/wp-content/uploads/2022/03/small-2.gif)
+
+学習率 が大きすぎる時 = ほとんど更新されずにおわる
+
+適切な [学習率](https://hogetech.info/machine-learning/deep-learning/dl-basic2#learning_rate "学習率") を設定した場合は、以下のように目標とする [損失関数](#loss) にたどり着けます。
+
+![](https://hogetech.info/wp-content/uploads/2022/03/sample-1.gif)
+
+学習率 が適切な場合 = (w0, w1) が (0, 0) の目標にたどり着ける https://github.com/oreilly-japan/deep-learning-from-scratch/blob/master/ch04/gradient\_method.py
+
+### 確率的勾配法の実装
+
+これまで学んだ [確率的勾配法 (SGD)](https://hogetech.info/machine-learning/deep-learning/dl-basic2#sgd "SGD") を実際に実装したものが以下のソースコードとなります。
+
+train acc が訓練 [データ](#) の予測正解率、test acc がテストデータ (まだ学習したことの無いデータ)の予測正解率です。
+
+
+
+## 関連
+[[機械学習(ML)|機械学習(ML)]]
+[[アルゴリズム]]
+[[AI/001_Permanent/001_AI基礎/RAG|RAG]]
+[[深層学習(DL)]]
+## 参考資料
+[[【入門】AI・機械学習・深層学習 (ディープラーニング) の違いと例]]
+[[ニューラルネットワークの仕組みを初心者にわかりやすく解説]]
+[[バックプロパゲーション (誤差逆伝播法) を初心者にわかりやすく]]
+[[最適な学習アルゴリズム・重み・ハイパーパラメータの決め方]]
+[[畳み込みニューラルネットワークを初心者にわかりやすく解説]]
+
